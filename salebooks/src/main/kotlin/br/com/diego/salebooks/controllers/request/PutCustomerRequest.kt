@@ -1,7 +1,6 @@
 package br.com.diego.salebooks.controllers.request
 
-data  class PostCustomerRequest(
-
+data  class PutCustomerRequest(
 
     var name: String,
     var email: String
