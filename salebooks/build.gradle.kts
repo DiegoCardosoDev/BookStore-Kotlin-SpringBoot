@@ -29,13 +29,18 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	implementation("mysql:mysql-connector-java:8.0.29")
-	implementation("org.flywaydb:flyway-core:8.5.11")
+
+
+
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("com.h2database:h2")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	runtimeOnly("mysql:mysql-connector-java")
+	implementation("org.flywaydb:flyway-core:8.5.10")
+	implementation("org.flywaydb:flyway-mysql:8.5.10")
 }
 
 tasks.withType<KotlinCompile> {
