@@ -1,16 +1,5 @@
 spring:
-  jpa:
-    hibernate:
-      ddl-auto:update
-
-    spring:
-      datasource:
-        url: jdbc:h2:mem:testdb
-        username: sa
-        password:
-        driverClassName: org.h2.Driver
-      jpa:
-        spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-        spring:
-          h2:
-            console.enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/salebooks
+    username: root
+    password: 4451
