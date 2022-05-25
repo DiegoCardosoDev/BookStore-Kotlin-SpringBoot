@@ -1,7 +1,7 @@
 package br.com.diego.salebooks.controllers
 
+import br.com.diego.salebooks.controllers.request.CustomerPutRequest
 import br.com.diego.salebooks.controllers.request.PostCustomerRequest
-import br.com.diego.salebooks.controllers.request.PutCustomerRequest
 import br.com.diego.salebooks.extension.toCustomerModel
 import br.com.diego.salebooks.models.CustomerModel
 import br.com.diego.salebooks.service.CustomerService
@@ -30,12 +30,12 @@ class CustomerController(
 
     @GetMapping("/{id}")
     fun getCustomer(@PathVariable id: Int): CustomerModel {
-        return customerService.getCustomer(id)
+        return customerService.getById(id)
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun update(@PathVariable id: Int, @RequestBody customer: PutCustomerRequest) {
+    fun update(@PathVariable id: Int, @RequestBody customer: CustomerPutRequest) {
         customerService.update(customer.toCustomerModel(id))
     }
 

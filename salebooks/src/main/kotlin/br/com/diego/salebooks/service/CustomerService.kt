@@ -3,7 +3,6 @@ package br.com.diego.salebooks.service
 import br.com.diego.salebooks.models.CustomerModel
 import br.com.diego.salebooks.repository.CustomerRepository
 import org.springframework.stereotype.Service
-import kotlin.math.E
 
 @Service
 class CustomerService(val customerRepository: CustomerRepository) {
@@ -24,7 +23,7 @@ class CustomerService(val customerRepository: CustomerRepository) {
     }
 
     /*GETID*/
-    fun getCustomer(id: Int): CustomerModel {
+    fun getById(id: Int): CustomerModel {
         return customerRepository.findById(id).orElseThrow()
     }
 
