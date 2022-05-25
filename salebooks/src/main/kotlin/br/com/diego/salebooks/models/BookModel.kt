@@ -1,6 +1,6 @@
 package br.com.diego.salebooks.models
 
-import br.com.diego.salebooks.enums.Status
+import br.com.diego.salebooks.enums.BookStatus
 import java.math.BigDecimal
 import javax.persistence.*
 
@@ -20,11 +20,11 @@ data class BookModel(
 
     @Column
     @Enumerated(EnumType.STRING)
-    var status: Status? = null,
+    var status: BookStatus? = null,
 
     @ManyToOne
-    @JoinColumn(name = "custumer_id")
-    var customerModel: CustomerModel? = null
+    @JoinColumn(name = "customer_id")
+    var customer: CustomerModel? = null
 
 
 
