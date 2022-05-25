@@ -17,7 +17,7 @@ class BookService(
     }
 
     @GetMapping
-    fun getAll(title: String?): List<BookModel> {
+    fun findAllBooks(title: String?): List<BookModel> {
 
         title?.let {
             return bookRepository.findByTitleContainingIgnoreCase(title)

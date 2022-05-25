@@ -1,5 +1,5 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/salebooks
+    url: jdbc:mysql://localhost:3306/salesbook
     username: root
     password: 4451
