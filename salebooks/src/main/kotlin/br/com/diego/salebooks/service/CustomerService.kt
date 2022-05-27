@@ -5,14 +5,17 @@ import br.com.diego.salebooks.repository.CustomerRepository
 import org.springframework.stereotype.Service
 
 @Service
-class CustomerService(val customerRepository: CustomerRepository) {
+class CustomerService(
+    val customerRepository: CustomerRepository,
+    val bookService: BookService
+) {
 
     /*GET ALL*/
     fun getAll(name: String?): List<CustomerModel> {
 
-       name?.let {
-           return customerRepository.findByNameContainingIgnoreCase(name)
-       }
+        name?.let {
+            return customerRepository.findByNameContainingIgnoreCase(name)
+        }
         return customerRepository.findAll().toList()
     }
 
@@ -37,10 +40,8 @@ class CustomerService(val customerRepository: CustomerRepository) {
 
     /*DELETE*/
     fun delete(id: Int) {
-
-       if (!customerRepository.existsById(id)){
-           throw Exception()
-       }
+        val customer = getById(id)
+        bookService.deleteByCustumer(customer)
         customerRepository.deleteById(id)
     }
 

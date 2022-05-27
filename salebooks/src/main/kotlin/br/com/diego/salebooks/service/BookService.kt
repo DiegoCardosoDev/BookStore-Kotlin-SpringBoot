@@ -2,6 +2,7 @@ package br.com.diego.salebooks.service
 
 import br.com.diego.salebooks.enums.BookStatus
 import br.com.diego.salebooks.models.BookModel
+import br.com.diego.salebooks.models.CustomerModel
 import br.com.diego.salebooks.repository.BookRepository
 import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.GetMapping
@@ -25,12 +26,12 @@ class BookService(
         return bookRepository.findAll().toList()
     }
 
-    fun findActive(): List<BookModel>{
+    fun findActive(): List<BookModel> {
         return bookRepository.findByStatus(BookStatus.ATIVO).toList()
 
     }
 
-    fun findById(@PathVariable id: Int):BookModel{
+    fun findById(@PathVariable id: Int): BookModel {
         return bookRepository.findById(id).orElseThrow()
     }
 
@@ -44,6 +45,14 @@ class BookService(
         book.status = BookStatus.CANCELADO
 
         update(book)
+    }
+
+    fun deleteByCustumer(customer: CustomerModel) {
+        val books = bookRepository.findByCustomer(customer)
+        for (book in books){
+            book.status = BookStatus.DELETADO
+        }
+        bookRepository.saveAll(books)
     }
 
 
