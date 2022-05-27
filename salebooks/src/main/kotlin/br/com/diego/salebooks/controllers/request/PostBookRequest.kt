@@ -12,3 +12,10 @@ data  class PostBookRequest(
     @JsonAlias("customer_id")
     var customerId: Int
 )
+
+data class PutBookRequest(
+
+    var title: String?,
+    var price: BigDecimal?
+
+)
