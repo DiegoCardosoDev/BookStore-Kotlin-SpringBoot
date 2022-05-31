@@ -24,7 +24,7 @@ class BookController(
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody request: PostBookRequest) {
-        val customer = customerService.getById(request.customerId)
+        val customer = customerService.findById(request.customerId)
         bookService.create(request.toBookModel(customer))
 
     }
@@ -56,6 +56,12 @@ class BookController(
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun delete(@PathVariable id: Int) {
         bookService.delete(id)
+    }
+
+    @PutMapping("activation/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    fun bookActivation(@PathVariable id: Int) {
+        bookService.activationBook(id)
     }
 
 

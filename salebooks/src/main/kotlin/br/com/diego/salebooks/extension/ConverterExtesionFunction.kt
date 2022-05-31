@@ -7,13 +7,24 @@ import br.com.diego.salebooks.controllers.request.PutBookRequest
 import br.com.diego.salebooks.enums.BookStatus
 import br.com.diego.salebooks.models.BookModel
 import br.com.diego.salebooks.models.CustomerModel
+import br.com.diego.salebooks.models.status.customerStatus
 
 fun PostCustomerRequest.toCustomerModel(): CustomerModel {
-    return CustomerModel(name = this.name, email = this.email)
+    return CustomerModel(
+        name = this.name,
+        email = this.email,
+        status = customerStatus.ATIVO
+    )
 }
 
-fun CustomerPutRequest.toCustomerModel(id: Int): CustomerModel {
-    return CustomerModel(id = id, name = this.name, email = this.email)
+fun CustomerPutRequest.toCustomerModel(previousValue: CustomerModel): CustomerModel {
+    return CustomerModel(
+
+        id=previousValue.id,
+        name = this.name,
+        email = this.email,
+        status = previousValue.status
+    )
 }
 
 fun PostBookRequest.toBookModel(customer: CustomerModel): BookModel {

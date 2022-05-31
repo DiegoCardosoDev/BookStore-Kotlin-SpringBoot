@@ -49,10 +49,17 @@ class BookService(
 
     fun deleteByCustumer(customer: CustomerModel) {
         val books = bookRepository.findByCustomer(customer)
-        for (book in books){
+        for (book in books) {
             book.status = BookStatus.DELETADO
         }
         bookRepository.saveAll(books)
+    }
+
+    fun activationBook(id: Int) {
+        val book = findById(id)
+        book.status = BookStatus.ATIVO
+        update(book)
+
     }
 
 

@@ -1,6 +1,7 @@
 package br.com.diego.salebooks.service
 
 import br.com.diego.salebooks.models.CustomerModel
+import br.com.diego.salebooks.models.status.customerStatus
 import br.com.diego.salebooks.repository.CustomerRepository
 import org.springframework.stereotype.Service
 
@@ -26,7 +27,7 @@ class CustomerService(
     }
 
     /*GETID*/
-    fun getById(id: Int): CustomerModel {
+    fun findById(id: Int): CustomerModel {
         return customerRepository.findById(id).orElseThrow()
     }
 
@@ -40,9 +41,10 @@ class CustomerService(
 
     /*DELETE*/
     fun delete(id: Int) {
-        val customer = getById(id)
+        val customer = findById(id)
         bookService.deleteByCustumer(customer)
-        customerRepository.deleteById(id)
+        customer.status = customerStatus.INATIVO
+        customerRepository.save(customer)
     }
 
 }
