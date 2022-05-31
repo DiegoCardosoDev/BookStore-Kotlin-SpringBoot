@@ -2,10 +2,14 @@ package br.com.diego.salebooks.controllers
 
 import br.com.diego.salebooks.controllers.request.CustomerPutRequest
 import br.com.diego.salebooks.controllers.request.PostCustomerRequest
+import br.com.diego.salebooks.controllers.response.CustomerResponse
 import br.com.diego.salebooks.extension.toCustomerModel
-import br.com.diego.salebooks.models.CustomerModel
+import br.com.diego.salebooks.extension.toResponse
 import br.com.diego.salebooks.service.CustomerService
 import lombok.extern.slf4j.Slf4j
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.data.web.PageableDefault
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
@@ -18,8 +22,10 @@ class CustomerController(
 
 
     @GetMapping
-    fun getAll(@RequestParam name: String?): List<CustomerModel> {
-        return customerService.getAll(name)
+    fun getAll(@PageableDefault(page = 0, size = 10)pageable: Pageable,
+               @RequestParam name: String?): Page<CustomerResponse> {
+
+        return customerService.getAll(pageable).map { it.toResponse() }
     }
 
     @PostMapping
@@ -29,8 +35,8 @@ class CustomerController(
     }
 
     @GetMapping("/{id}")
-    fun getCustomer(@PathVariable id: Int): CustomerModel {
-        return customerService.findById(id)
+    fun getCustomer(@PathVariable id: Int): CustomerResponse {
+        return customerService.findById(id).toResponse()
     }
 
     @PutMapping("/{id}")

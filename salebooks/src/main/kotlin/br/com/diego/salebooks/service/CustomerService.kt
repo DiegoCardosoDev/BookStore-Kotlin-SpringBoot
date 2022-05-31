@@ -3,6 +3,8 @@ package br.com.diego.salebooks.service
 import br.com.diego.salebooks.models.CustomerModel
 import br.com.diego.salebooks.models.status.customerStatus
 import br.com.diego.salebooks.repository.CustomerRepository
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 
 @Service
@@ -12,12 +14,8 @@ class CustomerService(
 ) {
 
     /*GET ALL*/
-    fun getAll(name: String?): List<CustomerModel> {
-
-        name?.let {
-            return customerRepository.findByNameContainingIgnoreCase(name)
-        }
-        return customerRepository.findAll().toList()
+    fun getAll(pageable: Pageable): Page<CustomerModel> {
+        return customerRepository.findAll(pageable)
     }
 
 

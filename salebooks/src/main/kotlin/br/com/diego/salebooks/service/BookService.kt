@@ -4,8 +4,9 @@ import br.com.diego.salebooks.enums.BookStatus
 import br.com.diego.salebooks.models.BookModel
 import br.com.diego.salebooks.models.CustomerModel
 import br.com.diego.salebooks.repository.BookRepository
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
-import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 
 @Service
@@ -17,17 +18,13 @@ class BookService(
         bookRepository.save(book)
     }
 
-    @GetMapping
-    fun findAllBooks(title: String?): List<BookModel> {
 
-        title?.let {
-            return bookRepository.findByTitleContainingIgnoreCase(title)
-        }
-        return bookRepository.findAll().toList()
+    fun findAllBooks(page: Pageable): Page<BookModel> {
+        return bookRepository.findAll(page)
     }
 
-    fun findActive(): List<BookModel> {
-        return bookRepository.findByStatus(BookStatus.ATIVO).toList()
+    fun findActive(page: Pageable): Page<BookModel> {
+        return bookRepository.findByStatus(BookStatus.ATIVO, page)
 
     }
 
@@ -61,6 +58,8 @@ class BookService(
         update(book)
 
     }
+
+
 
 
 }
