@@ -1,25 +1,25 @@
 package br.com.diego.salebooks.models
 
-import br.com.diego.salebooks.models.status.customerStatus
+import br.com.diego.salebooks.enums.CustomerStatus
 import javax.persistence.*
 
 @Entity(name = "customer")
 data class CustomerModel(
 
 
-    @Id
+        @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Int? = null,
+        var id: Int? = null,
 
-    @Column
-    var name: String,
+        @Column
+        var name: String,
 
-    @Column
-    var email: String,
+        @Column
+        var email: String,
 
-    @Column
+        @Column
     @Enumerated(EnumType.STRING)
-    var status: customerStatus
+        var status: CustomerStatus
 
 
 )

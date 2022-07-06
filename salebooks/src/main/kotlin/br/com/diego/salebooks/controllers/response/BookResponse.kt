@@ -8,7 +8,7 @@ data class BookResponse(
 
     var id: Int? = null,
 
-    var title: String,
+    var name: String,
 
     var price: BigDecimal,
 

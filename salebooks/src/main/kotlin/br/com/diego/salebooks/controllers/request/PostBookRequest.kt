@@ -3,19 +3,22 @@ package br.com.diego.salebooks.controllers.request
 import com.fasterxml.jackson.annotation.JsonAlias
 import java.math.BigDecimal
 
-data  class PostBookRequest(
+data class PostBookRequest(
 
-    var title: String,
+        var name: String,
 
-    var price: BigDecimal,
+        var price: BigDecimal,
 
-    @JsonAlias("customer_id")
-    var customerId: Int
+        @JsonAlias("customer_id")
+        var customerId: Int
+
 )
 
 data class PutBookRequest(
 
-    var title: String?,
-    var price: BigDecimal?
+        var name: String?,
+        var price: BigDecimal?
 
-)
+) {
+
+}

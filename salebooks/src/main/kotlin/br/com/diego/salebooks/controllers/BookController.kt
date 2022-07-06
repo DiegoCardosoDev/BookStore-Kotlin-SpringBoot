@@ -20,40 +20,29 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("books")
 class BookController(
-    val bookService: BookService,
-    val customerService: CustomerService
+        val bookService: BookService,
+        val customerService: CustomerService
 ) {
-
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody request: PostBookRequest) {
         val customer = customerService.findById(request.customerId)
         bookService.create(request.toBookModel(customer))
-
     }
 
     @GetMapping
-    fun getAll(@PageableDefault(page = 0, size = 10) pageable: Pageable): Page<BookResponse> {
-        return bookService.findAllBooks(pageable).map { it.toResponse() }
+    fun findAll(@PageableDefault(page = 0, size = 10) pageable: Pageable): Page<BookResponse> {
+        return bookService.findAll(pageable).map { it.toResponse() }
     }
 
-    @GetMapping("/actives")
-    fun getActives(@PageableDefault(page = 0, size = 10) pageable: Pageable): Page<BookResponse> {
-        return bookService.findActive(pageable).map { it.toResponse() }
-
-    }
+    @GetMapping("/active")
+    fun findActives(@PageableDefault(page = 0, size = 10) pageable: Pageable): Page<BookResponse> =
+            bookService.findActives(pageable).map { it.toResponse() }
 
     @GetMapping("/{id}")
-    fun getById(@PathVariable id: Int): BookResponse {
+    fun findById(@PathVariable id: Int): BookResponse {
         return bookService.findById(id).toResponse()
-    }
-
-    @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun update(@PathVariable id: Int, @RequestBody book: PutBookRequest) {
-        val bookSaved = bookService.findById(id)
-        bookService.update(book.toBookModel(bookSaved))
     }
 
     @DeleteMapping("/{id}")
@@ -62,11 +51,11 @@ class BookController(
         bookService.delete(id)
     }
 
-    @PutMapping("activation/{id}")
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun bookActivation(@PathVariable id: Int) {
-        bookService.activationBook(id)
+    fun update(@PathVariable id: Int, @RequestBody book: PutBookRequest) {
+        val bookSaved = bookService.findById(id)
+        bookService.update(book.toBookModel(bookSaved))
     }
-
 
 }

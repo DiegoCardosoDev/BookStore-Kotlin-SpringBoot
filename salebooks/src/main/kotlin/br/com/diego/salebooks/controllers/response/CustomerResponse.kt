@@ -1,14 +1,14 @@
 package br.com.diego.salebooks.controllers.response
 
-import br.com.diego.salebooks.models.status.customerStatus
+import br.com.diego.salebooks.enums.CustomerStatus
 
 data class CustomerResponse(
 
-    var id: Int? = null,
+        var id: Int? = null,
 
-    var name: String,
+        var name: String,
 
-    var email: String,
+        var email: String,
 
-    var status: customerStatus
+        var status: CustomerStatus
 )

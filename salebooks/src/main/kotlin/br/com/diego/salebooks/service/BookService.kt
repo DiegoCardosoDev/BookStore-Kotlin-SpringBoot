@@ -7,33 +7,26 @@ import br.com.diego.salebooks.repository.BookRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
-import org.springframework.web.bind.annotation.PathVariable
 
 @Service
 class BookService(
-    val bookRepository: BookRepository
+        val bookRepository: BookRepository
 ) {
 
     fun create(book: BookModel) {
         bookRepository.save(book)
     }
 
-
-    fun findAllBooks(page: Pageable): Page<BookModel> {
-        return bookRepository.findAll(page)
+    fun findAll(pageable: Pageable): Page<BookModel> {
+        return bookRepository.findAll(pageable) as Page<BookModel>
     }
 
-    fun findActive(page: Pageable): Page<BookModel> {
-        return bookRepository.findByStatus(BookStatus.ATIVO, page)
-
+    fun findActives(pageable: Pageable): Page<BookModel> {
+        return bookRepository.findByStatus(BookStatus.ATIVO, pageable)
     }
 
-    fun findById(@PathVariable id: Int): BookModel {
+    fun findById(id: Int): BookModel {
         return bookRepository.findById(id).orElseThrow()
-    }
-
-    fun update(book: BookModel) {
-        bookRepository.save(book)
     }
 
     fun delete(id: Int) {
@@ -44,7 +37,11 @@ class BookService(
         update(book)
     }
 
-    fun deleteByCustumer(customer: CustomerModel) {
+    fun update(book: BookModel) {
+        bookRepository.save(book)
+    }
+
+    fun deleteByCustomer(customer: CustomerModel) {
         val books = bookRepository.findByCustomer(customer)
         for (book in books) {
             book.status = BookStatus.DELETADO
@@ -52,14 +49,6 @@ class BookService(
         bookRepository.saveAll(books)
     }
 
-    fun activationBook(id: Int) {
-        val book = findById(id)
-        book.status = BookStatus.ATIVO
-        update(book)
-
-    }
-
-
-
 
 }
+
