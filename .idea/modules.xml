@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/sale-books-kotlin-spring.iml" filepath="$PROJECT_DIR$/.idea/sale-books-kotlin-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BookStore-Kotlin-SpringBoot.iml" filepath="$PROJECT_DIR$/.idea/BookStore-Kotlin-SpringBoot.iml" />
     </modules>
   </component>
 </project>
