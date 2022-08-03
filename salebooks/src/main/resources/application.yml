@@ -1,5 +1,13 @@
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
   datasource:
     url: jdbc:mysql://localhost:3306/salesbook?createDatabaseIfNotExist=true
     username: root
     password: 4451
+    jackson:
+      default-property-inclusion: non_null
+      
+
+
