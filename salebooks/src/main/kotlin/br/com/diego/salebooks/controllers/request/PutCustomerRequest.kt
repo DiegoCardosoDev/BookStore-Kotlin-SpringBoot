@@ -1,7 +1,13 @@
 package br.com.diego.salebooks.controllers.request
 
-data  class PutCustomerRequest(
+import javax.validation.constraints.Email
+import javax.validation.constraints.NotEmpty
 
-    var name: String,
-    var email: String
+data class PutCustomerRequest(
+
+        @field:NotEmpty(message = "nome não pode ser vazio")
+        var name: String,
+
+        @field:Email(message = "email deve ser válido")
+        var email: String
 )
