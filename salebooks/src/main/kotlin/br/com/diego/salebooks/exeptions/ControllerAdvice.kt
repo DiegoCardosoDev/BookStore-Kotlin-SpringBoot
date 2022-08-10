@@ -1,8 +1,11 @@
 package br.com.diego.salebooks.exeptions
 
 import br.com.diego.salebooks.controllers.response.ErrorResponse
+import br.com.diego.salebooks.controllers.response.FieldErrorResponse
+import br.com.diego.salebooks.enums.Errors
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.MethodArgumentNotValidException
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.context.request.WebRequest
 
@@ -21,4 +24,32 @@ class ControllerAdvice {
         return ResponseEntity(error, HttpStatus.NOT_FOUND)
 
     }
+    @ExceptionHandler(BadRequestExeption::class)
+    fun handleBadRequest(ex: BadRequestExeption, request: WebRequest): ResponseEntity<ErrorResponse> {
+        val error = ErrorResponse(
+                HttpStatus.BAD_REQUEST.value(),
+                ex.message,
+                ex.erroCode,
+                null
+
+        )
+        return ResponseEntity(error, HttpStatus.BAD_REQUEST)
+
+    }
+    @ExceptionHandler(MethodArgumentNotValidException::class)
+    fun handleMethodArgumentNotValidException(ex: MethodArgumentNotValidException, request: WebRequest): ResponseEntity<ErrorResponse> {
+        val error = ErrorResponse(
+                HttpStatus.UNPROCESSABLE_ENTITY.value(),
+                ex.message,
+                Errors.BK001.code,
+                ex.bindingResult.fieldErrors.map { FieldErrorResponse(it.defaultMessage ?: "invalid", it.field) }
+
+        )
+        return ResponseEntity(error, HttpStatus.BAD_REQUEST)
+
+    }
 }
+
+
+
+

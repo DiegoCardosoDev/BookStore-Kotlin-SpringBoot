@@ -1,6 +1,8 @@
 package br.com.diego.salebooks.models
 
 import br.com.diego.salebooks.enums.BookStatus
+import br.com.diego.salebooks.enums.Errors
+import br.com.diego.salebooks.exeptions.BadRequestExeption
 import java.math.BigDecimal
 import javax.persistence.*
 
@@ -28,7 +30,7 @@ data class BookModel(
     var status: BookStatus? = null
         set(value) {
             if(field == BookStatus.CANCELADO || field == BookStatus.DELETADO)
-                throw Exception("Não é possivel alterar um livro com status ${field}")
+                throw BadRequestExeption(Errors.BK102.message.format(field), Errors.BK102.code)
 
             field = value
         }

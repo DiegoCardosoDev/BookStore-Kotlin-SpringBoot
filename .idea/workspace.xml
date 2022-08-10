@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d305af9-b6a1-4204-8343-f3ccfcce0616" name="Changes" comment="fix:exceção para objeto não encontrado">
-      <change afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/enums/Errors.kt" afterDir="false" />
+    <list default="true" id="5d305af9-b6a1-4204-8343-f3ccfcce0616" name="Changes" comment="fix:enum para erros específicos">
+      <change afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/BadRequestExeption.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/handleArgumentNotValidException.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/service/BookService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/service/BookService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/CustomerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/CustomerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/request/PostCustomerRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/request/PostCustomerRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/enums/Errors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/enums/Errors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/ControllerAdvice.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/ControllerAdvice.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/models/BookModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/models/BookModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +86,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="br.com.diego.salebooks.exeptions" />
       <recent name="br.com.diego.salebooks.controllers.response" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="br.com.diego.salebooks.exeptions" />
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.SalebooksApplicationKt">
@@ -147,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660089776552</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix:enum para erros específicos">
+      <created>1660090534428</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660090534428</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,6 +181,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refatory: configuração ambiente" />
     <MESSAGE value="fix:exceção para objeto não encontrado" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix:exceção para objeto não encontrado" />
+    <MESSAGE value="fix:enum para erros específicos" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix:enum para erros específicos" />
   </component>
 </project>
