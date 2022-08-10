@@ -1,6 +1,7 @@
 package br.com.diego.salebooks.service
 
 import br.com.diego.salebooks.enums.CustomerStatus
+import br.com.diego.salebooks.enums.Errors
 import br.com.diego.salebooks.exeptions.NotFoundExeption
 import br.com.diego.salebooks.models.CustomerModel
 import br.com.diego.salebooks.repository.CustomerRepository
@@ -25,7 +26,7 @@ class CustomerService(
     }
 
     fun findById(id: Int): CustomerModel {
-        return customerRepository.findById(id).orElseThrow { NotFoundExeption("Customer $id não existe", "BK-0001") }
+        return customerRepository.findById(id).orElseThrow { NotFoundExeption(Errors.BK201.message.format(id), Errors.BK201.code) }
     }
 
     fun update(customer: CustomerModel) {
