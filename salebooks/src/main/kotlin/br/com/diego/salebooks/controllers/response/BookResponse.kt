@@ -8,11 +8,11 @@ data class BookResponse(
 
     var id: Int? = null,
 
-    var name: String,
+    var name: String?,
 
-    var price: BigDecimal,
+    var price: BigDecimal?,
 
-    var status: BookStatus? = null,
+    var status: BookStatus?,
 
-    var customer: CustomerModel? = null
+    var customer: CustomerModel?
 )

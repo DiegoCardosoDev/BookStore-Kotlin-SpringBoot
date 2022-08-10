@@ -1,10 +1,9 @@
 package br.com.diego.salebooks.service
 
 import br.com.diego.salebooks.enums.CustomerStatus
+import br.com.diego.salebooks.exeptions.NotFoundExeption
 import br.com.diego.salebooks.models.CustomerModel
-import br.com.diego.salebooks.models.status.customerStatus
 import br.com.diego.salebooks.repository.CustomerRepository
-import org.springframework.data.domain.Page
 import org.springframework.stereotype.Service
 
 
@@ -26,11 +25,11 @@ class CustomerService(
     }
 
     fun findById(id: Int): CustomerModel {
-        return customerRepository.findById(id).orElseThrow()
+        return customerRepository.findById(id).orElseThrow { NotFoundExeption("Customer $id não existe", "BK-0001") }
     }
 
     fun update(customer: CustomerModel) {
-        if(!customerRepository.existsById(customer.id!!)){
+        if (!customerRepository.existsById(customer.id!!)) {
             throw Exception()
         }
 

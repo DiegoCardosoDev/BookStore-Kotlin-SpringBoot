@@ -1,6 +1,7 @@
 package br.com.diego.salebooks.service
 
 import br.com.diego.salebooks.enums.BookStatus
+import br.com.diego.salebooks.exeptions.NotFoundExeption
 import br.com.diego.salebooks.models.BookModel
 import br.com.diego.salebooks.models.CustomerModel
 import br.com.diego.salebooks.repository.BookRepository
@@ -26,7 +27,7 @@ class BookService(
     }
 
     fun findById(id: Int): BookModel {
-        return bookRepository.findById(id).orElseThrow()
+        return bookRepository.findById(id).orElseThrow { NotFoundExeption("Book $id não existe", "BK-0001") }
     }
 
     fun delete(id: Int) {
