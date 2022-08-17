@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d305af9-b6a1-4204-8343-f3ccfcce0616" name="Changes" comment="style:update para endpoints">
+    <list default="true" id="5d305af9-b6a1-4204-8343-f3ccfcce0616" name="Changes" comment="update endpoints maturity">
+      <change afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/config/SwaggerConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/CustomerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/CustomerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +53,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Enum" />
         <option value="Kotlin Annotation" />
+        <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -74,7 +75,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/DIEGO-CARDOSO/Documents/PROJETOS/KOTLIN-SPRING-BOOKS/BookStore-Kotlin-SpringBoot&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DIEGO-CARDOSO/Downloads/mercado-livro_C10_A2/mercado-livro&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;
   }
 }</component>
@@ -187,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660748376684</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update endpoints maturity">
+      <created>1660749653648</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1660749653648</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,7 +217,8 @@
     <MESSAGE value="feat:anotação para email já cadastrado" />
     <MESSAGE value="configs" />
     <MESSAGE value="style:update para endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="style:update para endpoints" />
+    <MESSAGE value="update endpoints maturity" />
+    <option name="LAST_COMMIT_MESSAGE" value="update endpoints maturity" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
