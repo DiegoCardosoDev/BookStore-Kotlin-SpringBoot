@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d305af9-b6a1-4204-8343-f3ccfcce0616" name="Changes" comment="configs">
+    <list default="true" id="5d305af9-b6a1-4204-8343-f3ccfcce0616" name="Changes" comment="style:update para endpoints">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/BookController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/BookController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/CustomerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/CustomerController.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660097996951</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="style:update para endpoints">
+      <created>1660748376684</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1660748376684</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,7 +208,8 @@
     <MESSAGE value="feat:validação para campos do request" />
     <MESSAGE value="feat:anotação para email já cadastrado" />
     <MESSAGE value="configs" />
-    <option name="LAST_COMMIT_MESSAGE" value="configs" />
+    <MESSAGE value="style:update para endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="style:update para endpoints" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

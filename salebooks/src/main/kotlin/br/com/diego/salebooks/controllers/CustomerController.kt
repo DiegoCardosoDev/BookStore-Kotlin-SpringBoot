@@ -19,7 +19,7 @@ class CustomerController(
         val customerService : CustomerService
 ) {
 
-    @GetMapping
+    @GetMapping("/all-customer")
     fun getAll(@RequestParam  name: String?): List<CustomerResponse> {
         return customerService.getAll(name).map { it.toResponse() }
     }
