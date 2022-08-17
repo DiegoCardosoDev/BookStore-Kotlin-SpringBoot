@@ -24,7 +24,7 @@ class CustomerController(
         return customerService.getAll(name).map { it.toResponse() }
     }
 
-    @PostMapping
+    @PostMapping("/create-customer")
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody @Valid customer: PostCustomerRequest) {
         customerService.create(customer.toCustomerModel())
@@ -35,14 +35,14 @@ class CustomerController(
         return customerService.findById(id).toResponse()
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun update(@PathVariable id: Int, @RequestBody customer: PutCustomerRequest) {
         val customerSaved = customerService.findById(id)
         customerService.update(customer.toCustomerModel(customerSaved))
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun delete(@PathVariable id: Int) {
         customerService.delete(id)
