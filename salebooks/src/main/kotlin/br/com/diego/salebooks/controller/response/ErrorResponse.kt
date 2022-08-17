@@ -1,4 +1,4 @@
-package br.com.diego.salebooks.controllers.response
+package br.com.diego.salebooks.controller.response
 
 data class ErrorResponse(
         var httpCode: Int,

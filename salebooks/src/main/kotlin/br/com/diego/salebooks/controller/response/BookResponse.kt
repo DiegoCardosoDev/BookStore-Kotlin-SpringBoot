@@ -1,4 +1,4 @@
-package br.com.diego.salebooks.controllers.response
+package br.com.diego.salebooks.controller.response
 
 import br.com.diego.salebooks.enums.BookStatus
 import br.com.diego.salebooks.models.CustomerModel

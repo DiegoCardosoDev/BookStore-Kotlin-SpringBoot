@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d305af9-b6a1-4204-8343-f3ccfcce0616" name="Changes" comment="update endpoints maturity">
-      <change afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/config/SwaggerConfig.kt" afterDir="false" />
+    <list default="true" id="5d305af9-b6a1-4204-8343-f3ccfcce0616" name="Changes" comment="feat:documentação swagger implementada">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/salebooks/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/SalebooksApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/SalebooksApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/config/SwaggerConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/config/SwaggerConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/BookController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/BookController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/CustomerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/CustomerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/request/PostBookRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/request/PostBookRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/request/PostCustomerRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/request/PostCustomerRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/request/PutCustomerRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/request/PutCustomerRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/response/BookResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/BookResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/response/CustomerResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/CustomerResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/response/ErrorResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/ErrorResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controllers/response/FieldErrorResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/FieldErrorResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/ControllerAdvice.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/ControllerAdvice.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/extension/ConverterExtesionFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/extension/ConverterExtesionFunction.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660749653648</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat:documentação swagger implementada">
+      <created>1660777020022</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1660777020022</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,7 +237,8 @@
     <MESSAGE value="configs" />
     <MESSAGE value="style:update para endpoints" />
     <MESSAGE value="update endpoints maturity" />
-    <option name="LAST_COMMIT_MESSAGE" value="update endpoints maturity" />
+    <MESSAGE value="feat:documentação swagger implementada" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:documentação swagger implementada" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,13 +1,12 @@
-package br.com.diego.salebooks.controllers
+package br.com.diego.salebooks.controller
 
-import br.com.diego.salebooks.controllers.request.PostCustomerRequest
-import br.com.diego.salebooks.controllers.request.PutCustomerRequest
-import br.com.diego.salebooks.controllers.response.CustomerResponse
+import br.com.diego.salebooks.controller.request.PostCustomerRequest
+import br.com.diego.salebooks.controller.request.PutCustomerRequest
+import br.com.diego.salebooks.controller.response.CustomerResponse
 import br.com.diego.salebooks.extension.toCustomerModel
 import br.com.diego.salebooks.extension.toResponse
 import br.com.diego.salebooks.service.CustomerService
 import lombok.extern.slf4j.Slf4j
-import org.springframework.data.domain.Page
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 import javax.validation.Valid

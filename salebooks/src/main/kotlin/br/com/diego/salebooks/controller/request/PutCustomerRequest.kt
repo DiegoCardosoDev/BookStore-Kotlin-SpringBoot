@@ -1,4 +1,4 @@
-package br.com.diego.salebooks.controllers.request
+package br.com.diego.salebooks.controller.request
 
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotEmpty

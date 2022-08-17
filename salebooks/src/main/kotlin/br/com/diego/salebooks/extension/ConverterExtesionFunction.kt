@@ -1,8 +1,8 @@
 package br.com.diego.salebooks.extension
 
-import br.com.diego.salebooks.controllers.request.*
-import br.com.diego.salebooks.controllers.response.BookResponse
-import br.com.diego.salebooks.controllers.response.CustomerResponse
+import br.com.diego.salebooks.controller.request.*
+import br.com.diego.salebooks.controller.response.BookResponse
+import br.com.diego.salebooks.controller.response.CustomerResponse
 import br.com.diego.salebooks.enums.BookStatus
 import br.com.diego.salebooks.enums.CustomerStatus
 import br.com.diego.salebooks.models.BookModel

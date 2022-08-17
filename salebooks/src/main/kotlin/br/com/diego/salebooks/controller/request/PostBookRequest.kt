@@ -1,4 +1,4 @@
-package br.com.diego.salebooks.controllers.request
+package br.com.diego.salebooks.controller.request
 
 import com.fasterxml.jackson.annotation.JsonAlias
 import java.math.BigDecimal

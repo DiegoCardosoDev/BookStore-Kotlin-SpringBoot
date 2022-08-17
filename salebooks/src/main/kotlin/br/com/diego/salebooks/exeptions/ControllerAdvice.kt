@@ -1,7 +1,7 @@
 package br.com.diego.salebooks.exeptions
 
-import br.com.diego.salebooks.controllers.response.ErrorResponse
-import br.com.diego.salebooks.controllers.response.FieldErrorResponse
+import br.com.diego.salebooks.controller.response.ErrorResponse
+import br.com.diego.salebooks.controller.response.FieldErrorResponse
 import br.com.diego.salebooks.enums.Errors
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

@@ -41,8 +41,7 @@ dependencies {
 	runtimeOnly("mysql:mysql-connector-java")
 	implementation("org.flywaydb:flyway-core:8.5.10")
 	implementation("org.flywaydb:flyway-mysql:8.5.10")
-	implementation("io.springfox:springfox-swagger2:2.9.2")
-	implementation("io.springfox:springfox-swagger-ui:3.0.0")
+	implementation ("io.springfox:springfox-boot-starter:3.0.0")
 
 
 }

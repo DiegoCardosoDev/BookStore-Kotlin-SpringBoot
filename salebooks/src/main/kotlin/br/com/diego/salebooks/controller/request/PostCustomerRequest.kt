@@ -1,4 +1,4 @@
-package br.com.diego.salebooks.controllers.request
+package br.com.diego.salebooks.controller.request
 
 import br.com.diego.salebooks.validation.EmailAvalable
 import javax.validation.constraints.Email
