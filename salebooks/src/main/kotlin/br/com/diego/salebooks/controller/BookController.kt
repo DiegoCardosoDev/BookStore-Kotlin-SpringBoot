@@ -47,7 +47,7 @@ class BookController(
     @ApiResponses(value = [ApiResponse(code = 200, message = "livros ativos carregados")])
     @GetMapping("/active")
     fun findActives(@PageableDefault(page = 0, size = 10) pageable: Pageable): Page<BookResponse> =
-            bookService.findActives(pageable).map { it.toResponse() }
+            bookService.findActives(pageable).map { it.toResponse()}
 
     @ApiOperation(value = " Carrega livro pelo ID")
     @ApiResponses(value = [ApiResponse(code = 200, message = "livros carregado")])
