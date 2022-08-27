@@ -6,7 +6,8 @@ import br.com.diego.salebooks.exeptions.BadRequestExeption
 import java.math.BigDecimal
 import javax.persistence.*
 
-@Entity(name = "books")
+
+@Entity(name = "book")
 data class BookModel(
 
         @Id

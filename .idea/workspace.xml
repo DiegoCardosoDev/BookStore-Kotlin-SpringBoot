@@ -4,9 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d305af9-b6a1-4204-8343-f3ccfcce0616" name="Changes" comment="feat:documentação swagger pra customer">
+    <list default="true" id="5d305af9-b6a1-4204-8343-f3ccfcce0616" name="Changes" comment="feat:adicionei informações na documentação">
+      <change afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/PurchaseController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/models/PurchaseModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/salebooks/src/main/resources/db/migration/V1__create_table_customer.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/salebooks/src/main/resources/db/migration/V2__create_table_book.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/SalebooksApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/SalebooksApplication.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/config/SwaggerConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/config/SwaggerConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/BookController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/BookController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/CustomerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/CustomerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/request/PostBookRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/request/PostBookRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/request/PostCustomerRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/request/PostCustomerRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/request/PutCustomerRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/request/PutCustomerRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/BookResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/BookResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/CustomerResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/CustomerResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/ErrorResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/ErrorResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/FieldErrorResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/controller/response/FieldErrorResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/enums/BookStatus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/enums/BookStatus.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/enums/CustomerStatus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/enums/CustomerStatus.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/enums/Errors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/enums/Errors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/BadRequestExeption.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/BadRequestExeption.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/ControllerAdvice.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/ControllerAdvice.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/NotFoundExeption.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/NotFoundExeption.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/handleArgumentNotValidException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/exeptions/handleArgumentNotValidException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/extension/ConverterExtesionFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/extension/ConverterExtesionFunction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/models/BookModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/models/BookModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/models/CustomerModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/models/CustomerModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/models/status/customerStatus.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/repository/BookRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/repository/BookRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/repository/CustomerRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/repository/CustomerRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/service/BookService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/service/BookService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/service/CustomerService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/service/CustomerService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/validation/EmailAvalable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/validation/EmailAvalable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/validation/EmailAvalableValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/kotlin/br/com/diego/salebooks/validation/EmailAvalableValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/resources/db/migration/V1__create_table_custumer.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/resources/db/migration/V2__create_table_books.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/main/resources/db/migration/V3__add_staus_table_customer.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/salebooks/src/test/kotlin/br/com/diego/salebooks/SalebooksApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/salebooks/src/test/kotlin/br/com/diego/salebooks/SalebooksApplicationTests.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +98,7 @@
         <option value="Kotlin Annotation" />
         <option value="Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -74,15 +117,22 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/DIEGO-CARDOSO/Downloads/mercado-livro_C10_A2/mercado-livro",
+    "last_opened_file_path": "C:/Users/DIEGO-CARDOSO/Documents/PROJETOS/KOTLIN-SPRING-BOOKS/BookStore-Kotlin-SpringBoot/salebooks/src/main/resources/db/migration",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DIEGO-CARDOSO\Documents\PROJETOS\KOTLIN-SPRING-BOOKS\BookStore-Kotlin-SpringBoot\salebooks\src\main\resources\db\migration" />
+    </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="br.com.diego.salebooks.controller.request" />
       <recent name="br.com.diego.salebooks.validation" />
       <recent name="br.com.diego.salebooks.exeptions" />
       <recent name="br.com.diego.salebooks.controllers.response" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="br.com.diego.salebooks.enums" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="br.com.diego.salebooks.exeptions" />
