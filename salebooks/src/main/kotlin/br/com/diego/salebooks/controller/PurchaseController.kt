@@ -2,7 +2,7 @@ package br.com.diego.salebooks.controller
 
 import br.com.diego.salebooks.mapper.PurchaseMapper
 import br.com.diego.salebooks.service.PurchaseService
-import com.mercadolivro.controller.request.PostPurchaseRequest
+import br.com.diego.salebooks.controller.request.PostPurchaseRequest
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 

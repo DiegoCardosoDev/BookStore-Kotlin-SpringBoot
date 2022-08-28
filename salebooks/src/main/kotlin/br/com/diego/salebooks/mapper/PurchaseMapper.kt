@@ -3,7 +3,7 @@ package br.com.diego.salebooks.mapper
 import br.com.diego.salebooks.models.PurchaseModel
 import br.com.diego.salebooks.service.BookService
 import br.com.diego.salebooks.service.CustomerService
-import com.mercadolivro.controller.request.PostPurchaseRequest
+import br.com.diego.salebooks.controller.request.PostPurchaseRequest
 import org.springframework.stereotype.Component
 
 @Component
