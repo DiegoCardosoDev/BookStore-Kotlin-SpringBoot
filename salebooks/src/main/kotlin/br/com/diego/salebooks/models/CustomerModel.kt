@@ -1,7 +1,7 @@
 package br.com.diego.salebooks.models
 
 import br.com.diego.salebooks.enums.CustomerStatus
-import br.com.diego.salebooks.enums.Profile
+import br.com.diego.salebooks.enums.Role
 import javax.persistence.*
 
 @Entity(name = "customer")
@@ -28,8 +28,8 @@ data class CustomerModel(
         @Column(name="role")
         @Enumerated(EnumType.STRING)
         @CollectionTable(name="customer_roles", joinColumns = [JoinColumn(name="customer_id")])
-        @ElementCollection(targetClass = Profile::class, fetch = FetchType.EAGER)
-        var roles:Set<Profile> = setOf()
+        @ElementCollection(targetClass = Role::class, fetch = FetchType.EAGER)
+        var roles:Set<Role> = setOf()
 
 
 

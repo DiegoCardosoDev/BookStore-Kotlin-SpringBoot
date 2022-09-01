@@ -2,7 +2,7 @@ package br.com.diego.salebooks.service
 
 import br.com.diego.salebooks.enums.CustomerStatus
 import br.com.diego.salebooks.enums.Errors
-import br.com.diego.salebooks.enums.Profile
+import br.com.diego.salebooks.enums.Role
 import br.com.diego.salebooks.exeptions.NotFoundExeption
 import br.com.diego.salebooks.models.CustomerModel
 import br.com.diego.salebooks.repository.CustomerRepository
@@ -26,7 +26,7 @@ class CustomerService(
 
     fun create(customer: CustomerModel) {
         val customerCopy=customer.copy(
-                roles = setOf(Profile.CUSTOMER),
+                roles = setOf(Role.CUSTOMER),
                 password = bCryptPasswordEncoder.encode(customer.password)
 
         )
