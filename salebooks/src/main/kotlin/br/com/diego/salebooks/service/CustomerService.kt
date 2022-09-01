@@ -6,13 +6,15 @@ import br.com.diego.salebooks.enums.Profile
 import br.com.diego.salebooks.exeptions.NotFoundExeption
 import br.com.diego.salebooks.models.CustomerModel
 import br.com.diego.salebooks.repository.CustomerRepository
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Service
 
 
 @Service
 class CustomerService(
-        val customerRepository: CustomerRepository,
-        val bookService: BookService
+        private val customerRepository: CustomerRepository,
+        private val bookService: BookService,
+        private val bCryptPasswordEncoder: BCryptPasswordEncoder
 ) {
 
     fun getAll(name: String?): List<CustomerModel> {
@@ -24,7 +26,9 @@ class CustomerService(
 
     fun create(customer: CustomerModel) {
         val customerCopy=customer.copy(
-                roles = setOf(Profile.CUSTOMER)
+                roles = setOf(Profile.CUSTOMER),
+                password = bCryptPasswordEncoder.encode(customer.password)
+
         )
         customerRepository.save(customerCopy)
     }
