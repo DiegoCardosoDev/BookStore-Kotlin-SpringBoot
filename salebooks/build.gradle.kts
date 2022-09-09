@@ -43,6 +43,8 @@ dependencies {
 	implementation("org.flywaydb:flyway-core:8.5.10")
 	implementation("org.flywaydb:flyway-mysql:8.5.10")
 	implementation ("io.springfox:springfox-boot-starter:3.0.0")
+	implementation("io.jsonwebtoken:jjwt:0.9.1")
+
 
 
 }

@@ -3,6 +3,7 @@ package br.com.diego.salebooks.security
 import br.com.diego.salebooks.controller.request.LoginRequest
 import br.com.diego.salebooks.exeptions.AutheticationExeption
 import br.com.diego.salebooks.repository.CustomerRepository
+import br.com.diego.salebooks.security.util.JwtUltil
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
@@ -14,7 +15,8 @@ import javax.servlet.http.HttpServletResponse
 
 class AltheticationFilter(
         private val authManager: AuthenticationManager,
-        private val customerRepository: CustomerRepository
+        private val customerRepository: CustomerRepository,
+        private val jwtUltil: JwtUltil
 ):UsernamePasswordAuthenticationFilter() {
 
 
@@ -33,7 +35,8 @@ class AltheticationFilter(
 
     override fun successfulAuthentication(request: HttpServletRequest, response: HttpServletResponse, chain: FilterChain, authResult: Authentication) {
         val id =(authResult.principal as UserCustomDetail).id
-        response.addHeader("Authorization", "2102")
+        val token = jwtUltil.generateToken(id)
+        response.addHeader("Authorization", "Bearer $token")
 
     }
 }

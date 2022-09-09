@@ -2,6 +2,7 @@ package br.com.diego.salebooks.config
 
 import br.com.diego.salebooks.repository.CustomerRepository
 import br.com.diego.salebooks.security.AltheticationFilter
+import br.com.diego.salebooks.security.util.JwtUltil
 import br.com.diego.salebooks.service.UserDetailsCustomService
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -17,7 +18,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 @EnableWebSecurity
 class SecurityConfig(
         private val customerRepository: CustomerRepository,
-        private val userDetails: UserDetailsCustomService
+        private val userDetails: UserDetailsCustomService,
+        private val jwtUltil: JwtUltil
 ):WebSecurityConfigurerAdapter() {
 
     private val PUBLIC_POST_MATCHERS= arrayOf(
@@ -33,7 +35,7 @@ class SecurityConfig(
                 .antMatchers(HttpMethod.POST, *PUBLIC_POST_MATCHERS).permitAll()
                 .anyRequest()
                 .authenticated()
-        http.addFilter(AltheticationFilter(authenticationManager(),customerRepository))
+        http.addFilter(AltheticationFilter(authenticationManager(),customerRepository,jwtUltil))
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
     }
