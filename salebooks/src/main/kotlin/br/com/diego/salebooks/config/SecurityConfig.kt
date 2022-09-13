@@ -1,5 +1,6 @@
 package br.com.diego.salebooks.config
 
+import br.com.diego.salebooks.enums.Role
 import br.com.diego.salebooks.repository.CustomerRepository
 import br.com.diego.salebooks.security.AltheticationFilter
 import br.com.diego.salebooks.security.AuthorizationFilter
@@ -27,6 +28,10 @@ class SecurityConfig(
             "/customer"
     )
 
+    private val ADMIN_MATCHERS = arrayOf(
+            "/admin/**"
+    )
+
     override fun configure(auth: AuthenticationManagerBuilder) {
         auth.userDetailsService(userDetails).passwordEncoder(bCryptPasswordEncoder())
     }
@@ -34,6 +39,7 @@ class SecurityConfig(
         http.cors().and().csrf().disable()
         http.authorizeHttpRequests()
                 .antMatchers(HttpMethod.POST, *PUBLIC_POST_MATCHERS).permitAll()
+                .antMatchers(*ADMIN_MATCHERS).hasAnyAuthority(Role.ADMIN.description)
                 .anyRequest()
                 .authenticated()
         http.addFilter(AltheticationFilter(authenticationManager(),customerRepository,jwtUltil))
