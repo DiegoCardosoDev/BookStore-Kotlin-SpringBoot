@@ -1,5 +1,7 @@
 package br.com.diego.salebooks.security.util
 
+import br.com.diego.salebooks.exeptions.AutheticationExeption
+import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.stereotype.Component
@@ -22,5 +24,26 @@ class JwtUltil {
                 .signWith(SignatureAlgorithm.HS512,secret!!.toByteArray())
                 .compact()
 
+    }
+
+    fun isValidToken(token: String): Boolean {
+        val clains = getClaims(token)
+        if (clains.subject==null || clains.expiration==null || Date().after(clains.expiration)){
+            return false
+        }
+        return true
+
+    }
+
+    private fun getClaims(token: String): Claims {
+        try {
+            return Jwts.parser().setSigningKey(secret!!.toByteArray()).parseClaimsJws(token).body
+        }catch (ex:Exception){
+            throw AutheticationExeption("token inválido", "999")
+        }
+    }
+
+    fun getSubject(token: String): String {
+        return getClaims(token).subject
     }
 }

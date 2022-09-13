@@ -2,6 +2,7 @@ package br.com.diego.salebooks.config
 
 import br.com.diego.salebooks.repository.CustomerRepository
 import br.com.diego.salebooks.security.AltheticationFilter
+import br.com.diego.salebooks.security.AuthorizationFilter
 import br.com.diego.salebooks.security.util.JwtUltil
 import br.com.diego.salebooks.service.UserDetailsCustomService
 import org.springframework.context.annotation.Bean
@@ -36,6 +37,7 @@ class SecurityConfig(
                 .anyRequest()
                 .authenticated()
         http.addFilter(AltheticationFilter(authenticationManager(),customerRepository,jwtUltil))
+        http.addFilter(AuthorizationFilter(authenticationManager(),userDetails,jwtUltil))
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
     }
