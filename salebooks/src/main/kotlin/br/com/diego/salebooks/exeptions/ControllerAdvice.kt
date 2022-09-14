@@ -5,6 +5,7 @@ import br.com.diego.salebooks.controller.response.FieldErrorResponse
 import br.com.diego.salebooks.enums.Errors
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.security.access.AccessDeniedException
 import org.springframework.web.bind.MethodArgumentNotValidException
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.context.request.WebRequest
@@ -24,6 +25,7 @@ class ControllerAdvice {
         return ResponseEntity(error, HttpStatus.NOT_FOUND)
 
     }
+
     @ExceptionHandler(BadRequestExeption::class)
     fun handleBadRequest(ex: BadRequestExeption, request: WebRequest): ResponseEntity<ErrorResponse> {
         val error = ErrorResponse(
@@ -36,6 +38,7 @@ class ControllerAdvice {
         return ResponseEntity(error, HttpStatus.BAD_REQUEST)
 
     }
+
     @ExceptionHandler(MethodArgumentNotValidException::class)
     fun handleMethodArgumentNotValidException(ex: MethodArgumentNotValidException, request: WebRequest): ResponseEntity<ErrorResponse> {
         val error = ErrorResponse(
@@ -48,6 +51,20 @@ class ControllerAdvice {
         return ResponseEntity(error, HttpStatus.BAD_REQUEST)
 
     }
+
+    @ExceptionHandler(AccessDeniedException::class)
+    fun handAccessDeniedException(ex: NotFoundExeption, request: WebRequest): ResponseEntity<ErrorResponse> {
+        val error = ErrorResponse(
+                HttpStatus.FORBIDDEN.value(),
+                Errors.BK000.message,
+                Errors.BK000.code,
+                null
+
+        )
+        return ResponseEntity(error, HttpStatus.FORBIDDEN)
+
+    }
+
 }
 
 
