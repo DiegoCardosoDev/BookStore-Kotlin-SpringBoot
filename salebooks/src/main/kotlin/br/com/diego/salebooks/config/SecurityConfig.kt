@@ -39,6 +39,7 @@ class SecurityConfig(
     private val ADMIN_MATCHERS = arrayOf(
             "/admin/**"
     )
+    private val SWAGGER_URL_PATHS = arrayOf("/swagger-ui.html**")
 
     override fun configure(auth: AuthenticationManagerBuilder) {
         auth.userDetailsService(userDetails).passwordEncoder(bCryptPasswordEncoder())
@@ -47,6 +48,7 @@ class SecurityConfig(
         http.cors().and().csrf().disable()
         http.authorizeHttpRequests()
                 .antMatchers(HttpMethod.POST, *PUBLIC_POST_MATCHERS).permitAll()
+                .antMatchers(*SWAGGER_URL_PATHS).permitAll()
                 .antMatchers(*ADMIN_MATCHERS).hasAnyAuthority(Role.ADMIN.description)
                 .anyRequest()
                 .authenticated()
@@ -59,7 +61,7 @@ class SecurityConfig(
 
     override fun configure(web: WebSecurity) {
         web.ignoring().antMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources/**", "/configuration/**",
-                "/swagger-ui.html", "/webjars/**")
+                "/swagger-ui/index.html", "/webjars/**")
     }
 
 
