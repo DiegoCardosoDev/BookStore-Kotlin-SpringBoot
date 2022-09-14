@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: test
+  datasource:
+    url: jdbc:mysql://localhost:3306/salesbook?createDatabaseIfNotExist=true
+    username: diegocardosodev
+    password: 4451
+  jpa:
+    hibernate:
+      ddl-auto: update
+    jackson:
+      default-property-inclusion: non_null
+
+jwt:
+  secret: 3bfdb3e5-16d6-4b0a-998a-e174c24b324b
+  expiration: 999999
