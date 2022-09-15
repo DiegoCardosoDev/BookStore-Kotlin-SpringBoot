@@ -38,6 +38,22 @@ import java.util.UUID
   verify(exactly = 0) { customerRepository.findByNameContainingIgnoreCase(any()) }
 
  }
+ @Test
+ fun `should return customers when is name infomed`(){
+
+  val name = UUID.randomUUID().toString()
+  val fakeCustomers= listOf(buildCustomer(), buildCustomer())
+
+  every { customerRepository.findByNameContainingIgnoreCase(name) } returns fakeCustomers
+  val customers = customerService.getAll(name)
+  assertEquals(fakeCustomers, customers)
+  verify(exactly = 0) { customerRepository.findAll() }
+  verify(exactly = 1) { customerRepository.findByNameContainingIgnoreCase(name) }
+
+ }
+
+
+
  fun buildCustomer(id:Int?=null,
                    name:String="customerName",
                    email:String = "${UUID.randomUUID()}@email.com",
