@@ -44,7 +44,7 @@ class ControllerAdvice {
         val error = ErrorResponse(
                 HttpStatus.UNPROCESSABLE_ENTITY.value(),
                 ex.message,
-                Errors.BK001.code,
+                Errors.ML001.code,
                 ex.bindingResult.fieldErrors.map { FieldErrorResponse(it.defaultMessage ?: "invalid", it.field) }
 
         )
@@ -56,8 +56,8 @@ class ControllerAdvice {
     fun handAccessDeniedException(ex: NotFoundExeption, request: WebRequest): ResponseEntity<ErrorResponse> {
         val error = ErrorResponse(
                 HttpStatus.FORBIDDEN.value(),
-                Errors.BK000.message,
-                Errors.BK000.code,
+                Errors.ML000.message,
+                Errors.ML000.code,
                 null
 
         )
