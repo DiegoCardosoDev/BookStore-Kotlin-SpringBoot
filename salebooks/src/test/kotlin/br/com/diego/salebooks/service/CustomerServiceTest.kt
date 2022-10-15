@@ -2,9 +2,8 @@ package br.com.diego.salebooks.service
 
 import br.com.diego.salebooks.enums.CustomerStatus
 import br.com.diego.salebooks.enums.Errors
-import br.com.diego.salebooks.enums.Role
 import br.com.diego.salebooks.exeptions.NotFoundExeption
-import br.com.diego.salebooks.models.CustomerModel
+import br.com.diego.salebooks.helper.buildCustomer
 import br.com.diego.salebooks.repository.CustomerRepository
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs
@@ -99,7 +98,7 @@ class CustomerServiceTest {
     }
 
     @Test
-    fun  `should update customer ` (){
+    fun `should update customer `() {
         val id = Random().nextInt()
         val fakeCustomer = buildCustomer(id = id)
         every { customerRepository.existsById(id) } returns true
@@ -109,8 +108,9 @@ class CustomerServiceTest {
         verify(exactly = 1) { customerRepository.save(fakeCustomer) }
 
     }
+
     @Test
-    fun  `should throw  update customer  ` (){
+    fun `should throw  update customer  `() {
 
         val id = Random().nextInt()
         val fakeCustomer = buildCustomer(id = id)
@@ -129,12 +129,12 @@ class CustomerServiceTest {
     }
 
     @Test
-    fun  `should throw  delete customer  ` (){
+    fun `should throw  delete customer  `() {
         val id = Random().nextInt()
         val fakeCustomer = buildCustomer(id = id)
-        val expectedCustomer= fakeCustomer.copy(status = CustomerStatus.INATIVO)
+        val expectedCustomer = fakeCustomer.copy(status = CustomerStatus.INATIVO)
         every { customerService.findById(id) } returns fakeCustomer
-        every { customerRepository.save(expectedCustomer) }returns expectedCustomer
+        every { customerRepository.save(expectedCustomer) } returns expectedCustomer
         every { bookService.deleteByCustomer(fakeCustomer) } just runs
         customerService.delete(id)
         verify(exactly = 1) { customerService.findById(id) }
@@ -143,10 +143,10 @@ class CustomerServiceTest {
     }
 
     @Test
-    fun  `should throw not found exception when  delete customer  ` (){
+    fun `should throw not found exception when  delete customer  `() {
         val id = Random().nextInt()
         val fakeCustomer = buildCustomer(id = id)
-        every { customerService.findById(id) }  throws NotFoundExeption(Errors.ML101.message.format(id), Errors.ML101.code)
+        every { customerService.findById(id) } throws NotFoundExeption(Errors.ML101.message.format(id), Errors.ML101.code)
         val error = assertThrows<NotFoundExeption> { customerService.findById(id) }
         assertEquals("Book [${id}] not exists", error.message)
         assertEquals("ML-101", error.erroCode)
@@ -157,7 +157,7 @@ class CustomerServiceTest {
     }
 
     @Test
-    fun  `should return true when email available ` (){
+    fun `should return true when email available `() {
         val email = "${Random().nextInt().toString()}@email.com"
         every { customerRepository.existsByEmail(email) } returns false
         val emailAvailable = customerService.emailAvailable(email)
@@ -166,7 +166,7 @@ class CustomerServiceTest {
     }
 
     @Test
-    fun  `should return false when email unavailable ` (){
+    fun `should return false when email unavailable `() {
         val email = "${Random().nextInt().toString()}@email.com"
         every { customerRepository.existsByEmail(email) } returns true
         val emailAvailable = customerService.emailAvailable(email)
@@ -174,19 +174,5 @@ class CustomerServiceTest {
         verify(exactly = 1) { customerRepository.existsByEmail(email) }
     }
 
-
-    private fun buildCustomer(
-            id: Int? = null,
-            name: String = "customerName",
-            email: String = "${UUID.randomUUID()}@email.com",
-            password: String = "pass"
-    ) = CustomerModel(
-            id = id,
-            name = name,
-            email = email,
-            status = CustomerStatus.ATIVO,
-            password = password,
-            roles = setOf(Role.CUSTOMER)
-    )
 
 }
