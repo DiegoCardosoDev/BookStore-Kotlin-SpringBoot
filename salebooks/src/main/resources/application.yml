@@ -8,7 +8,5 @@ spring:
     default-property-inclusion: non_ null
 
 jwt:
-  secret: 3bfdb3e5-16d6-4b0a-998a-e174c24b324b
+  secret: dfd8fe2a-50b2-464d-ac60-0b6b6090a1db
   expiration: 999999
-
-

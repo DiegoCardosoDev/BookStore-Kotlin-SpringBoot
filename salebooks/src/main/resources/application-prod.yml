@@ -1,7 +1,5 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/salesbook?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/salebookproddb?createDatabaseIfNotExist=true
     username: diegocardosodev
     password: 4451
-  
-

@@ -9,7 +9,7 @@ plugins {
 	jacoco
 }
 
-group = "br.com.diego"
+group = "com.salebook"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
